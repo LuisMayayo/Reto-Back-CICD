@@ -33,6 +33,6 @@ spec:
     spec:
       containers:
       - name: car-api
-        image: marcoslarraga04/ecommerce-backend:v5
+        image: marcoslarraga04/ecommerce-backend:v7
         ports:
         - containerPort: 80
