@@ -24,7 +24,7 @@ WORKDIR /app
 COPY --from=build /app/out .
 
 # Exponer el puerto que la aplicación utilizará (por defecto, 80 para HTTP)
-EXPOSE 8080
+EXPOSE 80
 
 
 # Definir el comando para ejecutar la aplicación
