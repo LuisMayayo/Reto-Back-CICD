@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  # Servicio para la base de datos (SQL Server)
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrongPassword123!  # Cambia esto por una contraseña segura
+    ports:
+      - "1433:1433"  # Puerto del contenedor de SQL Server
+    networks:
+      - ecommerce-net
+    volumes:
+      - mssql-data:/var/opt/mssql  # Persistencia de los datos
+
+networks:
+  ecommerce-net:
+    driver: bridge
+
+volumes:
+  mssql-data:
+    driver: local
